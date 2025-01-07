@@ -8,3 +8,11 @@ RUN echo "conda activate $(head -1 /tmp/environment.yml | cut -d' ' -f2)" >> ~/.
 ENV PATH /opt/conda/envs/$(head -1 /tmp/environment.yml | cut -d' ' -f2)/bin:$PATH
 
 ENV CONDA_DEFAULT_ENV $(head -1 /tmp/environment.yml | cut -d' ' -f2)
+
+COPY ./docker/entrypoint.sh /
+
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
+
+

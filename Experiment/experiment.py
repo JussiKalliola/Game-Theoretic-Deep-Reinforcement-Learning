@@ -1,5 +1,6 @@
 import sys
-sys.path.append(r"/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/")
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from absl import app
 import tensorflow as tf
 gpus = tf.config.experimental.list_physical_devices('GPU')
