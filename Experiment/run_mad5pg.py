@@ -1,4 +1,6 @@
 import launchpad as lp
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from Environment.environment import vehicularNetworkEnv, make_environment_spec
 from Agents.MAD5PG.networks import make_default_MAD3PGNetworks
 from Agents.MAD5PG.agent import MAD3PGConfig, MultiAgentDistributedDDPG

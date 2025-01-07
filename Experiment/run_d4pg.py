@@ -1,6 +1,7 @@
 import sys
 
-sys.path.append(r"/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/")
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from environment_loop import EnvironmentLoop
 from Agents.D4PG_new.agent import D4PG
 from Agents.D4PG_new.networks import make_default_networks

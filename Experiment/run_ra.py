@@ -1,5 +1,6 @@
 import sys
-sys.path.append(r"/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/")
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from environment_loop import EnvironmentLoop
 from Agents.Comparable_Algorithms.RA.actors import FeedForwardActor
 from Utilities.FileOperator import load_obj

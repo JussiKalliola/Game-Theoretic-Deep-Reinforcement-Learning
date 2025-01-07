@@ -1,5 +1,6 @@
 import sys
-sys.path.append(r"/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/")
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from Environment.utilities import vehicleTrajectoriesProcessor
 
 if __name__ == "__main__":

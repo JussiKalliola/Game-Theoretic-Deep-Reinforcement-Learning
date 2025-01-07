@@ -1,4 +1,6 @@
 import launchpad as lp
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 from Environment.environment_old import make_environment_spec
 from Agents.MAD4PG.networks import make_default_networks
 from Agents.MAD4PG.agent_distributed import DistributedD4PG

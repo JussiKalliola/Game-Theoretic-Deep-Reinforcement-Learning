@@ -1,5 +1,6 @@
 import sys
-sys.path.append(r"/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/")
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 
 from typing import Optional, List, Tuple
 import numpy as np
