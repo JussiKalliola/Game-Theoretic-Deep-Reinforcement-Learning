@@ -3,10 +3,14 @@ import sys
 import pathlib
 import os
 sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
-#from Environment.utilities import vehicleTrajectoriesProcessor
+from Environment.utilities import vehicleTrajectoriesProcessor
 
 
 def combine_tdrive_trajectories(dir_name: str) -> str:
+
+    if os.path.isfile(f"{dir_name}/../trajectories_200802xx.csv"):
+        return f"{dir_name}/../trajectories_200802xx.csv" 
+
     Data = pd.DataFrame()
     F= []
     for root, dirs, files in os.walk(dir_name):
