@@ -1,6 +1,7 @@
 import pandas as pd
 import sys
 import pathlib
+import os
 sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 #from Environment.utilities import vehicleTrajectoriesProcessor
 
