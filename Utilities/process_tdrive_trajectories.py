@@ -22,11 +22,12 @@ def combine_tdrive_trajectories(dir_name: str) -> str:
         D.append(pd.read_csv(file_path,header=None,parse_dates = [1],\
                             names= ['vehicle_id', 'time', 'longitude', 'latitude']))
 
-    Data["order_number"] = 0
-    Data = Data[['vehicle_id', 'order_number', 'time', 'longitude', 'latitude']]
     Data=Data.append(D,ignore_index=True)
     Data.drop_duplicates(inplace=True)
     Data.dropna(inplace=True)
+    
+    Data["order_number"] = 0
+    Data = Data[['vehicle_id', 'order_number', 'time', 'longitude', 'latitude']]
 
     print("Saving data to a path.")
     # Combined dataframe saved to root folder
