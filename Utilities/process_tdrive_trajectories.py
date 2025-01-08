@@ -23,7 +23,7 @@ def combine_tdrive_trajectories(dir_name: str) -> str:
                             names= ['vehicle_id', 'time', 'longitude', 'latitude']))
 
     Data["order_number"] = 0
-    Data = Data['vehicle_id', 'order_number', 'time', 'longitude', 'latitude']
+    Data = Data[['vehicle_id', 'order_number', 'time', 'longitude', 'latitude']]
     Data=Data.append(D,ignore_index=True)
     Data.drop_duplicates(inplace=True)
     Data.dropna(inplace=True)
