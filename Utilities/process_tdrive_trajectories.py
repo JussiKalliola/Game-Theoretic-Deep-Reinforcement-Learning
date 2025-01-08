@@ -14,6 +14,7 @@ def combine_tdrive_trajectories(dir_name: str) -> str:
             F.append(os.path.join(root, name))
     D=[]
     for index, file_path in enumerate(F):
+        print(f"{index}. File processing...")
         D.append(pd.read_csv(file_path,header=None,parse_dates = [1],\
                             names= ['vehicle_id', 'time', 'longitude', 'latitude']))
 
@@ -21,9 +22,10 @@ def combine_tdrive_trajectories(dir_name: str) -> str:
     Data.drop_duplicates(inplace=True)
     Data.dropna(inplace=True)
 
+    print("Saving data to a path.")
     # Combined dataframe saved to root folder
-    Data.to_csv(f"{dir_name}/../trajectories_200802xx")
-    return f"{dir_name}/../trajectories_200802xx"
+    Data.to_csv(f"{dir_name}/../trajectories_200802xx.csv")
+    return f"{dir_name}/../trajectories_200802xx.csv"
 
 if __name__ == "__main__":
     """Convert T-Drive trajectory dataset into suitable format."""
