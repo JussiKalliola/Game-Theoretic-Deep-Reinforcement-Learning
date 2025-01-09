@@ -124,11 +124,11 @@ class EnvironmentLoop(core.Worker):
         average_local_rate: float = 0
         while not timestep.last():
         # Generate an action from the agent's policy and step the environment.
-            # print("timestep.observation: ", timestep.observation[:, -2:])
+            #print("timestep.observation: ", timestep.observation[:, -2:])
             select_action_time_start = time.time()
             action = self._actor.select_action(timestep.observation)
             
-            # print("action: ", action)
+            print("action: ", action)
             select_action_time += time.time() - select_action_time_start
             
             environment_step_time_start = time.time()

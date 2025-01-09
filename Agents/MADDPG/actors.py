@@ -72,6 +72,7 @@ class FeedForwardActor(core.Actor):
     def _policy(self, observations: types.NestedTensor) -> types.NestedTensor:
         agent_actions = []
         for i in range(self._agent_number):
+            print(observations.shape)
             agent_observation = observations[i, :]
             # Add a dummy batch dimension and as a side effect convert numpy to TF.
             agent_batched_observation = tf2_utils.add_batch_dim(agent_observation)

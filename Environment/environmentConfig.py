@@ -36,7 +36,7 @@ class vehicularNetworkEnvConfig:
     
     """Vehicle related."""
     vehicle_number: Optional[int] = 27
-    trajectories_file_name: str = 'CSV/trajectories_20161116_1300_1305'
+    trajectories_file_name: str = 'CSV/T-Drive/trajectories_20080202_1600_1830'
     task_request_rate: float = 1
     vehicle_seeds: List[int] = dataclasses.field(default_factory=list)
 

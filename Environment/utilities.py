@@ -27,7 +27,9 @@ class vehicleTrajectoriesProcessor(object):
             out_file: the name of the output file.  e.g., '/CSV/gps_20161116_processed.csv'
         """
         self._file_name = file_name
-        self._longitude_min, self._latitude_min = self.gcj02_to_wgs84(longitude_min, latitude_min)
+        #self._longitude_min, self._latitude_min = self.gcj02_to_wgs84(longitude_min, latitude_min)
+        self._longitude_min = longitude_min 
+        self._latitude_min = latitude_min #self.gcj02_to_wgs84(longitude_min, latitude_min)
         self._map_width = map_width
         self._communication_range = communication_range
         self._time_start = time_start
@@ -47,6 +49,7 @@ class vehicleTrajectoriesProcessor(object):
         
         for i in range(self._edge_number_in_width):
             for j in range(self._edge_number_in_width):
+                print(f"{i}-{j}. Processing edge")
                 self.process(
                     communication_range=self._communication_range, 
                     longitude_min=longitudes[i], 
@@ -103,6 +106,11 @@ class vehicleTrajectoriesProcessor(object):
         # 经纬度定位
         df.drop(df.columns[[1]], axis=1, inplace=True)
         df.dropna(axis=0)
+
+        print(df)
+        print(df.dtypes)
+        print(time_start)
+        print(type(time_start))
 
         longitude_max, latitude_max = self.get_longitude_and_latitude_max(longitude_min, latitude_min, communication_range * 2)
         

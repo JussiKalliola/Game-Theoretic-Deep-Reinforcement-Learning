@@ -32,7 +32,7 @@ def init_file_name():
     dayTime = datetime.datetime.now().strftime('%Y-%m-%d')
     hourTime = datetime.datetime.now().strftime('%H-%M-%S')
     rootDir = str(pathlib.Path(__file__).parent.parent.resolve())
-    pwd = rootDir + dayTime + '-' + hourTime
+    pwd = rootDir + "/envs/" + dayTime +  '-' + hourTime
 
     if not os.path.exists(pwd):
         os.makedirs(pwd)

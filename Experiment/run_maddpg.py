@@ -40,7 +40,8 @@ def main(_):
     # 0.6
     # environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/task_number/0_6/convex_environment_05727ef5311540ca84b4c596a73987cd.pkl"
     # 0.7
-    environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/task_number/0_7/convex_environment_c2ea75aa7cce404e9d9f8af15d49369f.pkl"
+    env_dir = str(pathlib.Path(__file__).parent.parent.resolve())
+    environment_file_name = f"{env_dir}/envs/2025-01-08-14-25-42/global_environment_9f96552726344bae837131ad37ce4b42.pkl"
     
     environment = load_obj(environment_file_name)
     
