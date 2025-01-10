@@ -13,7 +13,7 @@ def read_data(file_name: str) -> pd.DataFrame:
             
 
     Data = pd.DataFrame()
-    Data = pd.read_csv(file_name,header=None, dtype={'vehicle_id': int, 'order_number': int, 'time': float, 'longitude': float, 'latitude': float },\
+    Data = pd.read_csv(file_name,header=None, dtype={'vehicle_id': 'Int64', 'order_number': 'Int64', 'time': 'Float64', 'longitude': 'Float64', 'latitude': 'Float64'},\
                             names=['vehicle_id', 'order_number', 'time', 'longitude', 'latitude'])
     return Data
 
