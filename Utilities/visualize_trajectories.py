@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 def read_data(file_name: str) -> pd.DataFrame:
     try:
         if not os.path.isfile(file_name):
+            raise ValueError()
     except ValueError:
         raise ValueError("File not found.")
             
