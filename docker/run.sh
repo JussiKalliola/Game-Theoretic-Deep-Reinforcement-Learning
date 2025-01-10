@@ -9,8 +9,8 @@ docker run  -it \
             --rm \
             --cap-add NET_ADMIN \
             --privileged \
-	    --gpus all \
-            -e DISPLAY=$DISP \
+	          --gpus all \
+            -e DISPLAY=$DISPLAY \
             -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
             -e PYTHONBUFFERED=1 \
             -v /etc/timezone:/etc/timezone:ro \
