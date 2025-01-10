@@ -15,6 +15,8 @@ def read_data(file_name: str) -> pd.DataFrame:
     Data = pd.DataFrame()
     Data = pd.read_csv(file_name,header=None, \
                             names=['vehicle_id', 'order_number', 'time', 'longitude', 'latitude'])
+    Data.longitude = Data.longitude.astype(float)
+    Data.latitude = Data.latitude.astype(float)
     return Data
 
 
@@ -24,7 +26,7 @@ def map_viz(Data: pd.DataFrame,
             min_latitude: float,
             max_latitude: float):
 
-    Beijing = Data[(min_longitude < Data.longitude.astype(float)) & (Data.longitude.astype(float) < max_longitude) & (min_latitude < Data.latitude.astype(float)) & ( Data.latitude.astype(float) < max_latitude)]
+    Beijing = Data[(min_longitude < Data.longitude) & (Data.longitude < max_longitude) & (min_latitude < Data.latitude) & ( Data.latitude < max_latitude)]
 
     plt.figure(figsize = (9,6), dpi=150)
     #ax1 = plt.subplot2grid((1,2),(0,0))
