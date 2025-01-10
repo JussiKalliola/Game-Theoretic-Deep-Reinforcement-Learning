@@ -374,6 +374,8 @@ class vehicleList(object):
                     names=['vehicle_id', 'time', 'longitude', 'latitude'], header=0)
 
                 max_vehicle_id = df['vehicle_id'].max()
+                print(max_vehicle_id)
+                print(df)
                 
                 selected_vehicle_id = []
                 for vehicle_id in range(int(max_vehicle_id)):

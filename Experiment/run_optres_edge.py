@@ -15,7 +15,10 @@ def main(_):
     # scenario 3
     # environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/scenarios/scenario_3/edge_environment_0ff6ea4dcd184438aeb3389520f60aa9.pkl"
     # scenario 4
-    environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/scenarios/scenario_4/edge_environment_1bc5da3127734abc9d015bccf84bc1c0.pkl"
+    env_dir = str(pathlib.Path(__file__).parent.parent.resolve())
+    #environment_file_name = f"{env_dir}/envs/2025-01-10-09-58-51/global_environment_b29db0157b1c44548d70191cb9d6df2a.pkl"
+    environment_file_name = f"{env_dir}/envs/2025-01-10-12-34-10/edge_environment_58ef961660e145e0aa3d72a348efe058.pkl"
+ 
 
     
     # different compuation resources 
@@ -42,8 +45,8 @@ def main(_):
     environment = load_obj(environment_file_name)
 
     actor = FeedForwardActor(
-        agent_number=9,
-        agent_action_size=27,
+        agent_number=4,
+        agent_action_size=12,
     )
     
     loop = EnvironmentLoop(environment, actor)

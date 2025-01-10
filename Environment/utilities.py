@@ -27,9 +27,9 @@ class vehicleTrajectoriesProcessor(object):
             out_file: the name of the output file.  e.g., '/CSV/gps_20161116_processed.csv'
         """
         self._file_name = file_name
-        #self._longitude_min, self._latitude_min = self.gcj02_to_wgs84(longitude_min, latitude_min)
-        self._longitude_min = longitude_min 
-        self._latitude_min = latitude_min #self.gcj02_to_wgs84(longitude_min, latitude_min)
+        self._longitude_min, self._latitude_min = self.gcj02_to_wgs84(longitude_min, latitude_min)
+        #self._longitude_min = longitude_min 
+        #self._latitude_min = latitude_min #self.gcj02_to_wgs84(longitude_min, latitude_min)
         self._map_width = map_width
         self._communication_range = communication_range
         self._time_start = time_start
@@ -124,6 +124,7 @@ class vehicleTrajectoriesProcessor(object):
         
         # 排序
         df.sort_values(by=['vehicle_id', 'time'], inplace=True, ignore_index=True)
+        print(df)
 
         vehicle_number = 0
         old_vehicle_id = None
@@ -164,6 +165,7 @@ class vehicleTrajectoriesProcessor(object):
 
             old_vehicle_id = vehicle_id
 
+        print(df)
         old_row = None
         for index, row in df.iterrows():
             new_row = dict(df.iloc[index])
@@ -213,6 +215,7 @@ class vehicleTrajectoriesProcessor(object):
                             ignore_index=True)
                 old_row = new_row
         df.sort_values(by=['vehicle_id', 'time'], inplace=True, ignore_index=True)
+        print(df)
         df.to_csv(out_file)
 
     def get_out_file(self):

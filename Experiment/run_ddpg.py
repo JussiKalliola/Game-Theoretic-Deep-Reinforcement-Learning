@@ -12,7 +12,7 @@ def main(_):
     
     # different scenario
     # scneario 1
-    environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/2022-10-05-17-04-03/global_environment_72604a5e5b364143b36131abaffb8b31.pkl"
+    #environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/2022-10-05-17-04-03/global_environment_72604a5e5b364143b36131abaffb8b31.pkl"
     # scneario 2
     # environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/scenarios/scenario_2/old_environment_b624df881ef4447ba4f64825347c4f62.pkl"
     # scenario 3
@@ -41,6 +41,10 @@ def main(_):
     # 0.7
     # environment_file_name = ""
     
+    env_dir = str(pathlib.Path(__file__).parent.parent.resolve())
+    environment_file_name = f"{env_dir}/envs/2025-01-10-09-58-51/global_environment_b29db0157b1c44548d70191cb9d6df2a.pkl"
+
+
     environment = load_obj(environment_file_name)
 
     spec = make_environment_spec(environment)

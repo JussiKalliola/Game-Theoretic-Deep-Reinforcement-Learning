@@ -128,7 +128,7 @@ class EnvironmentLoop(core.Worker):
             select_action_time_start = time.time()
             action = self._actor.select_action(timestep.observation)
             
-            print("action: ", action)
+            #print("action: ", action)
             select_action_time += time.time() - select_action_time_start
             
             environment_step_time_start = time.time()

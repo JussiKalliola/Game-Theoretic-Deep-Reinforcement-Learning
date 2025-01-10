@@ -783,6 +783,7 @@ def init_distance_matrix_and_radio_coverage_matrix(
     vehicle_index_within_edges = [[[] for __ in range(env_config.time_slot_number)] for _ in range(env_config.edge_number)]
     vehicle_observed_index_within_edges = [[[] for __ in range(env_config.time_slot_number)] for _ in range(env_config.edge_number)]
     for i in range(env_config.vehicle_number):
+        print(f"Vehicle number {i}")
         for j in range(env_config.edge_number):
             for k in range(env_config.time_slot_number):
                 distance = vehicle_list.get_vehicle_by_index(i).get_distance_between_edge(k, edge_list.get_edge_by_index(j).get_edge_location())

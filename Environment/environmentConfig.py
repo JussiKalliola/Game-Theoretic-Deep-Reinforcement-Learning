@@ -24,19 +24,19 @@ class vehicularNetworkEnvConfig:
     task_seed: int = 0
     
     """"Edge related."""
-    edge_number: int = 9
+    edge_number: int = 4
     edge_power: float = 1000.0 # mW
     edge_bandwidth: float = 20.0  # MHz
     edge_minimum_computing_cycles: float = 3.0 * 1e9 # 3 GHz
     edge_maximum_computing_cycles: float = 10.0 * 1e9 # 10 GHz
-    communication_range: float = 500.0  # meters
-    map_length: float = 3000.0  # meters
-    map_width: float = 3000.0  # meters
+    communication_range: float = 3000.0  # meters
+    map_length: float = 10000.0  # meters
+    map_width: float = 10000.0  # meters
     edge_seed: int = 0
     
     """Vehicle related."""
-    vehicle_number: Optional[int] = 27
-    trajectories_file_name: str = 'CSV/T-Drive/trajectories_20080202_1600_1830'
+    vehicle_number: Optional[int] = 12
+    trajectories_file_name: str = 'CSV/T-Drive/trajectories_20080203_0700_0800'
     task_request_rate: float = 1
     vehicle_seeds: List[int] = dataclasses.field(default_factory=list)
 

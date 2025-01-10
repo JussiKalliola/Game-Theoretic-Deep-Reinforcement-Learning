@@ -19,11 +19,11 @@ from Experiment import run_ddpg
 from Experiment import run_d4pg
 
 if __name__ == '__main__':
-    # app.run(run_ddpg.main)
+    #app.run(run_ddpg.main)
     # app.run(run_d4pg.main)
-    app.run(run_maddpg.main)
+    #app.run(run_maddpg.main)
     # app.run(run_mad4pg.main)
     # app.run(run_optres_local.main)
-    # app.run(run_optres_edge.main)
+    app.run(run_optres_edge.main)
     # app.run(run_ra.main)
     

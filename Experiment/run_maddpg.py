@@ -41,20 +41,20 @@ def main(_):
     # environment_file_name = "/home/neardws/Documents/Game-Theoretic-Deep-Reinforcement-Learning/Data/task_number/0_6/convex_environment_05727ef5311540ca84b4c596a73987cd.pkl"
     # 0.7
     env_dir = str(pathlib.Path(__file__).parent.parent.resolve())
-    environment_file_name = f"{env_dir}/envs/2025-01-08-14-25-42/global_environment_9f96552726344bae837131ad37ce4b42.pkl"
+    environment_file_name = f"{env_dir}/envs/2025-01-10-09-58-51/global_environment_b29db0157b1c44548d70191cb9d6df2a.pkl"
     
     environment = load_obj(environment_file_name)
     
     spec = make_environment_spec(environment)    
     
     networks = make_default_networks(
-        agent_number=9,
+        agent_number=4,
         action_spec=spec.edge_actions,
     )
 
     agent = DDPG(
-        agent_number=9,
-        agent_action_size=27,
+        agent_number=4,
+        agent_action_size=12,
         environment_file=environment_file_name,
         environment_spec=spec,
         networks=networks,

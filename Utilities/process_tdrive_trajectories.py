@@ -16,8 +16,8 @@ def combine_tdrive_trajectories(dir_name: str) -> str:
     f_idx = 0
     for root, dirs, files in os.walk(dir_name):
         for name in files:
-            if f_idx >= 5000:
-                break
+            #if f_idx >= 2000:
+            #    break
             F.append(os.path.join(root, name))
             f_idx+=1
     D=[]
@@ -46,11 +46,12 @@ if __name__ == "__main__":
     """Convert T-Drive trajectory dataset into suitable format."""
     trajectories_dir_name: str = 'CSV/T-Drive/logs/'
     out_file_name = combine_tdrive_trajectories(trajectories_dir_name)
-    longitude_min: float = 116.4000
+    longitude_min: float = 116.0  
     latitude_min: float = 39.90
+    
     trajectories_time_start: str = '2008-02-03 07:00:00'
-    trajectories_time_end: str = '2008-02-03 19:00:00'
-    trajectories_out_file_name: str = 'CSV/T-Drive/trajectories_20080203_0700_0900'
+    trajectories_time_end: str = '2008-02-03 08:00:00'
+    trajectories_out_file_name: str = 'CSV/T-Drive/trajectories_20080203_0700_0800'
     edge_number: int = 9
     communication_range: float = 500
     
