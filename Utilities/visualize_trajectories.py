@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import os 
+import matplotlib
+matplotlib.use( 'TKAgg' )
 import matplotlib.pyplot as plt
 
 
@@ -31,7 +33,7 @@ def map_viz(Data: pd.DataFrame,
     plt.figure(figsize = (9,6), dpi=150)
     #ax1 = plt.subplot2grid((1,2),(0,0))
     plt.hexbin(Beijing.longitude,Beijing.latitude,bins='log', gridsize=600, cmap=plt.cm.hot)   
-    plt.axis([116.05, 116.8, 39.5, 40.25])
+    plt.axis([min_longitude, max_longitude, min_latitude, max_latitude])
     plt.title("(a) Data overview in Beijing")
     cb = plt.colorbar()
     cb.set_label('log10(N)')
